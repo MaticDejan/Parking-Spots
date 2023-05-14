@@ -1,0 +1,36 @@
+<div class="container" style="background-image: url('background.jpg');">
+
+  <div class="card">
+    <div>
+      <form (submit)="onSubmit()">
+        <div class="form-group space">
+          <div>
+            Bine ati venit in parcarea noastra. Prin formularul de mai jos, puteti adauga numere de inmatriculare in baza de date si puteti
+            modifica capacitatea maxima a parcarii.In acest moment sunt inregistrate {{nrInmat.length}} masini .
+          </div>
+          <input class="form-control description" [formControl]= "nrInmatriculare" placeholder="Numar de inmatriculare">
+        </div>
+        <div class="row space">
+
+          <div class="trimite">
+            <button  type="submit" class="btn btn-success full">Trimite</button>
+          </div>
+
+        </div>
+      </form>
+      <form (submit)="onSubmitCap()">
+        <div class="form-group space">
+          <input value="15" class="form-control description" [formControl]= "maxCap" placeholder="Capacitate maxima">
+        </div>
+        <div class="row space">
+
+          <div class="trimite">
+            <button type="submit" class="btn btn-success full">Trimite</button>
+          </div>
+
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="container nrInmatricul" *ngFor="let nr of nrInmat">Numar de inmatriculare: {{nr.nrInmatriculare}}</div>
+</div>
